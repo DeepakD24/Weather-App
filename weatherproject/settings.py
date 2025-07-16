@@ -15,7 +15,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = os.environ.get('DEBUG')=='True'
 
 #ALLOWED_HOSTS = ['https://weather-app-hme4.onrender.com','127.0.0.1','localhost']
-ALLOWED_HOSTS = ['yourdomain.com','your-render-url.onrender.com','127.0.0.1' ,'localhost']
+ALLOWED_HOSTS = ['https://weather-app-1-x3ol.onrender.com','127.0.0.1' ,'localhost']
 
 
 # Application definition
