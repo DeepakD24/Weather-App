@@ -3,186 +3,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
-    rel="stylesheet"
-  />
-<style>
-  :root {
-    --white: #ffffff;
-    --off-white: #f5f5f5;
-    --transp-white-1: rgba(255, 255, 255, 0.3);
-    --transp-white-2: rgba(255, 255, 255, 0.2);
-    --blue-1: #62b8f5;
-    --blue-2: #3a6dd8;
-    --shadow: rgba(0, 0, 0, 0.2);
-    --dark-blue: #052939;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-  }
+  <style>
+    :root {
+      --bg-glass: rgba(255, 255, 255, 0.15);
+      --border-glass: rgba(255, 255, 255, 0.25);
+      --text-primary: #ffffff;
+      --accent: #00c6ff;
+      --accent-dark: #0072ff;
+      --error: #ff4e4e;
+    }
 
-  body {
-    background-image: url('https://images.pexels.com/photos/3008509/pexels-photo-3008509.jpeg?auto=compress&cs=tinysrgb&w=1600');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    min-height: 100vh;
-    color: var(--dark-blue);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-  }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
 
-  .container {
-    width: 100%;
-    max-width: 600px;
-    background: var(--transp-white-2);
-    backdrop-filter: blur(12px);
-    border-radius: 16px;
-    padding: 2rem;
-    box-shadow: 0 10px 30px var(--shadow);
-    border: 1px solid var(--transp-white-1);
-  }
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      color: var(--text-primary);
+    }
 
-  h1 {
-    text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem;
-    color: var(--dark-blue);
-  }
+    .card {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      backdrop-filter: blur(18px);
+      border-radius: 20px;
+      padding: 2.5rem;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    }
 
-  form {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  input[type="text"] {
-    flex: 1;
-    padding: 0.7rem 1rem;
-    border-radius: 8px;
-    border: 1px solid var(--white);
-    background-color: transparent;
-    color: var(--dark-blue);
-    font-size: 1rem;
-    transition: border-color 0.3s;
-  }
-
-  input[type="text"]::placeholder {
-    color: #444;
-    opacity: 0.7;
-  }
-
-  .btn {
-    padding: 0.7rem 1.2rem;
-    background-color: var(--blue-2);
-    color: var(--white);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: background-color 0.3s, transform 0.2s;
-  }
-
-  .btn:hover {
-    background-color: var(--dark-blue);
-    transform: translateY(-2px);
-  }
-
-  .weather {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--transp-white-1);
-    border-radius: 12px;
-    padding: 1rem;
-    box-shadow: 0 5px 15px var(--shadow);
-    flex-wrap: wrap;
-  }
-
-  .left, .right {
-    flex: 1 1 45%;
-    text-align: center;
-    padding: 1rem;
-  }
-
-  .temp {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
-
-  .city {
-    font-size: 1.5rem;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-
-  .icon img {
-    width: 100px;
-    height: 100px;
-  }
-
-  .condition p {
-    margin: 0.3rem 0;
-    font-size: 1.1rem;
-  }
-
-  @media (max-width: 768px) {
-    .form {
-      flex-direction: column;
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      font-weight: 700;
     }
 
     form {
-      flex-direction: column;
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
     }
 
-    input[type="text"], .btn {
-      width: 100%;
+    input[type="text"] {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #333;
     }
 
-    .weather {
-      flex-direction: column;
+    input[type="text"]::placeholder {
+      color: #888;
     }
 
-    .left, .right {
-      flex: 1 1 100%;
+    .btn {
+      padding: 0.75rem 1rem;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
     }
-  }
-</style>
 
+    .btn:hover {
+      background: var(--accent-dark);
+    }
+
+    .weather-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .weather-info {
+      text-align: center;
+    }
+
+    .temp {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .city {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      text-transform: uppercase;
+    }
+
+    .icon img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .condition p {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .weather-box {
+        grid-template-columns: 1fr;
+      }
+
+      form {
+        flex-direction: column;
+      }
+
+      input[type="text"],
+      .btn {
+        width: 100%;
+      }
+
+      .btn {
+        margin-top: 0.5rem;
+      }
+    }
+  </style>
 </head>
 
 <body {% if exception_occurred %}
-    style="background-image: url('https://images.pexels.com/photos/3008509/pexels-photo-3008509.jpeg?auto=compress&cs=tinysrgb&w=1600');" 
-  {% else %}
-    style="background-image: url('{{ image_url }}');"
-  {% endif %}>
-  <div class="container">
-    <h1 class="heading">Weather App</h1>
-    
+      style="background: linear-gradient(135deg, #00c6ff, #0072ff);"
+      {% else %}
+      style="background-image: url('{{ image_url }}'); background-size: cover; background-position: center;"
+      {% endif %}>
+  
+  <div class="card">
+    <h1>🌦️ Weather Forecast</h1>
+
     <form method="POST">
       {% csrf_token %}
-      <input type="text" name="city" placeholder="Enter City">
+      <input type="text" name="city" placeholder="Enter city..." />
       <button type="submit" class="btn">Search</button>
     </form>
-    <div class="weather">
-      <div class="left">
-        <h2 class="temp">{{ temp }}&#176; C</h2>
-        <h2 class="city">{{ city }}</h2>
+
+    <div class="weather-box">
+      <div class="weather-info">
+        <div class="temp">{{ temp }}&#176; C</div>
+        <div class="city">{{ city }}</div>
       </div>
-      <div class="right">
+
+      <div class="weather-info">
         <div class="icon">
-          <p><img src="http://openweathermap.org/img/w/{{ icon }}.png" width="120px"></p>
+          <img src="http://openweathermap.org/img/w/{{ icon }}.png" alt="icon" />
         </div>
         <div class="condition">
           <p>{{ description }}</p>
@@ -191,11 +174,12 @@
       </div>
     </div>
   </div>
+
   {% if exception_occurred %}
   <script>
-      window.onload = function() {
-          alert("City information is not available to Weather API");
-      }
+    window.onload = function () {
+      alert("City information is not available to Weather API");
+    }
   </script>
   {% endif %}
 </body>
