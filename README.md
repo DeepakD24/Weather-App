@@ -18,7 +18,7 @@ A simple and responsive Weather App that allows users to check the current weath
 - OpenWeatherMap API
 
 ## 📷 Screenshots
-![image alt](https://github.com/DeepakD24/Weather-App/blob/0744a0ae3d9ca78609565eb772866676a1cf9b51/Screenshot1.png)
+![image alt](https://github.com/DeepakD24/Weather-App/blob/070723f88be9440a63367325821ee0ddc6df8e34/Screenshot_weather.png)
 
 ## 📜 License
 
